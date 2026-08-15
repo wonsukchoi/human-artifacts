@@ -1,0 +1,151 @@
+:root {
+  --bg: #fdfdfb;
+  --fg: #1a1a1a;
+  --muted: #6b6b6b;
+  --line: #d8d8d2;
+  --link: #1a1a1a;
+  --max-width: 640px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111110;
+    --fg: #e8e6e1;
+    --muted: #8a8a83;
+    --line: #333330;
+    --link: #e8e6e1;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 1.25rem 6rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--line);
+}
+
+a:hover {
+  text-decoration-color: var(--fg);
+}
+
+.crumbs {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.crumbs a {
+  color: var(--muted);
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin: 0 0 1.5rem;
+}
+
+h2 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 2rem 0 0.5rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+ul.plain {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  margin: 0.35rem 0;
+}
+
+.list-links li a {
+  font-weight: 500;
+}
+
+ul.tree {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.tree.tree-root > li {
+  margin: 0.9rem 0;
+}
+
+ul.tree.tree-root > li > a {
+  font-weight: 600;
+}
+
+ul.tree ul.tree {
+  margin: 0.35rem 0 0.35rem 0.7rem;
+  padding-left: 0.9rem;
+  border-left: 1px solid var(--line);
+}
+
+ul.tree li {
+  margin: 0.3rem 0;
+}
+
+ul.tree li a {
+  color: var(--fg);
+}
+
+ul.tree summary {
+  cursor: pointer;
+  color: var(--muted);
+}
+
+ul.tree summary::marker {
+  color: var(--muted);
+}
+
+ul.tree summary a {
+  color: var(--fg);
+}
+
+ul.tree details[open] > summary {
+  margin-bottom: 0.2rem;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  margin-top: 3rem;
+  padding-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
