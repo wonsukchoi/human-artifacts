@@ -3,6 +3,14 @@ import { kitchen } from "./artifacts/kitchen";
 import { bedroom } from "./artifacts/bedroom";
 import { bathroom } from "./artifacts/bathroom";
 import { livingRoom } from "./artifacts/living-room";
+import { garage } from "./artifacts/garage";
+import { office } from "./artifacts/office";
+import { diningRoom } from "./artifacts/dining-room";
+import { hallway } from "./artifacts/hallway";
+import { laundryRoom } from "./artifacts/laundry-room";
+import { entryway } from "./artifacts/entryway";
+import { attic } from "./artifacts/attic";
+import { yard } from "./artifacts/yard";
 import { materials } from "./artifacts/materials";
 
 export type { Artifact };
@@ -16,6 +24,14 @@ export const artifacts: Artifact[] = [
   ...bedroom,
   ...bathroom,
   ...livingRoom,
+  ...garage,
+  ...office,
+  ...diningRoom,
+  ...hallway,
+  ...laundryRoom,
+  ...entryway,
+  ...attic,
+  ...yard,
   ...materials,
 ];
 
