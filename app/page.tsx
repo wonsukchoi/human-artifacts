@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { artifacts, getArtifact, getChildSlug, getRoots, type Artifact } from "@/lib/data";
+import { Search } from "./search";
 
 function getChildArtifacts(artifact: Artifact): Artifact[] {
   return artifact.has
@@ -48,6 +49,8 @@ export default function Home() {
         made of. Anything it&apos;s made of that has its own entry links
         onward, all the way down.
       </p>
+
+      <Search artifacts={artifacts} />
 
       <h2>everything, {artifacts.length} entries</h2>
       <ul className="tree tree-root">

@@ -142,6 +142,42 @@ ul.tree details[open] > summary {
   margin-bottom: 0.2rem;
 }
 
+.search {
+  margin-bottom: 1.5rem;
+}
+
+.search input[type="search"] {
+  width: 100%;
+  font: inherit;
+  background: var(--bg);
+  color: var(--fg);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 0.5rem 0.7rem;
+}
+
+.search input[type="search"]::placeholder {
+  color: var(--muted);
+}
+
+.search input[type="search"]:focus {
+  outline: none;
+  border-color: var(--fg);
+}
+
+.search-results {
+  margin-top: 0.75rem;
+}
+
+.search-path {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.search-empty {
+  color: var(--muted);
+}
+
 footer {
   border-top: 1px solid var(--line);
   margin-top: 3rem;
