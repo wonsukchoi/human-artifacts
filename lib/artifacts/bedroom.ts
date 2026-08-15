@@ -6,7 +6,7 @@ export const bedroom: Artifact[] = [
     name: "Bedroom",
     what: "A room where humans sleep and rest.",
     why: "The body and brain need extended, uninterrupted downtime to repair tissue and consolidate memory. A dark, quiet, enclosed space makes that rest possible.",
-    has: ["bed", "closet", "lamp", "nightstand"],
+    has: ["bed", "closet", "lamp", "nightstand", "curtains"],
   },
   {
     slug: "bed",
@@ -224,5 +224,19 @@ export const bedroom: Artifact[] = [
     what: "A metal track fixed to a drawer and its cabinet that lets the drawer glide straight in and out.",
     why: "Without a track, a drawer would rock, jam, or need to be lifted fully out rather than sliding smoothly on centered rails.",
     has: [],
+  },
+  {
+    slug: "curtains",
+    name: "Curtains",
+    what: "A fabric panel hung over a window that can be drawn to block or filter outside light.",
+    why: "A bedroom needs to go dark on demand for sleep, but sunlight and streetlights come through a window regardless of the hour. Curtains are what actually lets the room block that light out.",
+    has: ["fabric", "curtain rod"],
+  },
+  {
+    slug: "curtain-rod",
+    name: "Curtain Rod",
+    what: "A horizontal bar mounted above a window that curtain fabric hangs from and slides along.",
+    why: "Curtains need to slide open and closed in one motion, not be unhooked and remounted each time — the rod is what lets the fabric glide side to side along a fixed track.",
+    has: ["steel"],
   },
 ];

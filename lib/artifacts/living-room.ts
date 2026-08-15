@@ -6,7 +6,7 @@ export const livingRoom: Artifact[] = [
     name: "Living Room",
     what: "A room where humans gather, relax, and share information.",
     why: "Sitting on the floor for long periods strains joints, and people need a shared space to talk, rest together, or take in the same information at once.",
-    has: ["sofa", "television", "bookshelf", "coffee table"],
+    has: ["sofa", "television", "bookshelf", "coffee table", "rug"],
   },
   {
     slug: "sofa",
@@ -133,5 +133,12 @@ export const livingRoom: Artifact[] = [
     what: "The flat horizontal surface of a table, fixed on top of its legs.",
     why: "A table's function lives entirely in this flat surface — everything else exists just to hold it at a usable height.",
     has: ["wood"],
+  },
+  {
+    slug: "rug",
+    name: "Rug",
+    what: "A woven fabric covering laid over a section of floor.",
+    why: "Bare hard flooring is cold underfoot, echoes footsteps, and gives seating no visual anchor. A rug softens the surface, dampens noise, and marks out where furniture should cluster.",
+    has: ["fabric", "rubber"],
   },
 ];

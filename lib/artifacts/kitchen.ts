@@ -20,7 +20,7 @@ export const kitchen: Artifact[] = [
     name: "Stove",
     what: "A controlled heat source for cooking, powered by gas flame or electric element.",
     why: "Cooking requires sustained, adjustable heat. Open fire is hard to control and unsafe indoors; a stove contains the heat and lets it be raised or lowered on demand.",
-    has: ["burner", "control knob", "surface"],
+    has: ["burner", "control knob", "surface", "oven"],
   },
   {
     slug: "refrigerator",
@@ -167,6 +167,20 @@ export const kitchen: Artifact[] = [
     name: "Insulation",
     what: "A foam or fiber material packed between a cabinet's inner and outer walls.",
     why: "Trapped pockets of still air conduct heat far more slowly than the metal walls around them, so a layer of insulation is what actually keeps outside heat from reaching the cold interior.",
+    has: [],
+  },
+  {
+    slug: "oven",
+    name: "Oven",
+    what: "An enclosed insulated chamber in a stove that surrounds food with heat for baking and roasting.",
+    why: "Some foods need slow, even heat from every side, not the direct exposed flame a burner gives. A sealed insulated chamber holds a steady heat and traps the moisture an open flame would let escape.",
+    has: ["heating element", "insulation"],
+  },
+  {
+    slug: "heating-element",
+    name: "Heating Element",
+    what: "A resistive coil or gas burner tube inside an oven that generates the heat filling the chamber.",
+    why: "Something has to actually produce heat inside the sealed chamber. The element is what converts electricity or gas into the steady heat the whole oven depends on.",
     has: [],
   },
   {
