@@ -27,6 +27,17 @@ or with the `/add-artifact` Claude Code command.
   belongs to (`kitchen.ts`, `bedroom.ts`, etc). Shared raw materials or
   generic hardware go in `lib/artifacts/materials.ts` instead, even if only
   one branch uses it so far — that's what lets a later branch reuse it.
+- **Pick one material, don't enumerate options.** A real tabletop might be
+  wood, glass, laminate, or stone — `has` isn't the place to capture that.
+  Pick whichever material is most common or most causally interesting, write
+  it as if it's the only answer (`has: ["wood"]`), and reuse the existing
+  precedent for that part if one exists. `has` means "these parts," not "one
+  of these parts" — it has no way to express alternatives, and adding one
+  (turning entries into `{name, alternatives}`) would make every future
+  artifact an exercise in listing variants instead of one direct answer. If
+  real variation is genuinely worth surfacing, add a caveat sentence to
+  `why` ("usually wood, though glass and laminate do the same job") — don't
+  change the data shape to hold it.
 
 ## Using `/add-artifact` (Claude Code)
 

@@ -51,7 +51,13 @@ Figure out, for the requested artifact:
   it (not a dictionary definition). Match the existing voice exactly: direct,
   concrete, no fluff, no "In today's world..." framing. Look at a few existing
   entries under `lib/artifacts/` first to calibrate tone before writing.
-- **has** — 2-3 parts/components it's made of or contains.
+- **has** — 2-3 parts/components it's made of or contains. When a part could
+  realistically be made of several different materials (a tabletop could be
+  wood, glass, laminate, stone...), don't enumerate them — pick whichever is
+  most common or most causally interesting and write it as the only answer
+  (`has: ["wood"]`). `has` has no way to express alternatives, and it should
+  stay that way; if the variation is genuinely worth surfacing, note it as a
+  caveat in `why` instead ("usually wood, though glass does the same job").
 
 ## 3. Decompose recursively, all the way down
 
