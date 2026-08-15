@@ -6,7 +6,7 @@ export const bedroom: Artifact[] = [
     name: "Bedroom",
     what: "A room where humans sleep and rest.",
     why: "The body and brain need extended, uninterrupted downtime to repair tissue and consolidate memory. A dark, quiet, enclosed space makes that rest possible.",
-    has: ["bed", "closet", "lamp", "nightstand", "curtains"],
+    has: ["bed", "closet", "lamp", "nightstand", "curtains", "dresser"],
   },
   {
     slug: "bed",
@@ -209,7 +209,7 @@ export const bedroom: Artifact[] = [
     name: "Nightstand",
     what: "A small table set beside a bed, within arm's reach of where a person sleeps.",
     why: "A lamp, glasses, phone, or a book needs a surface next to the bed. Reaching across a dark room to find them defeats the point of having them nearby.",
-    has: ["drawer", "wood"],
+    has: ["drawer", "wood", "alarm clock"],
   },
   {
     slug: "drawer",
@@ -238,5 +238,33 @@ export const bedroom: Artifact[] = [
     what: "A horizontal bar mounted above a window that curtain fabric hangs from and slides along.",
     why: "Curtains need to slide open and closed in one motion, not be unhooked and remounted each time — the rod is what lets the fabric glide side to side along a fixed track.",
     has: ["steel"],
+  },
+  {
+    slug: "alarm-clock",
+    name: "Alarm Clock",
+    what: "A small clock with a settable time that sounds an alarm at a chosen hour to wake a sleeping person.",
+    why: "The body's sleep cycle doesn't reliably end exactly when a person needs to wake — a loud sound at a fixed time overrides continued sleep when waking naturally on schedule can't be trusted.",
+    has: ["display", "speaker", "buttons"],
+  },
+  {
+    slug: "display",
+    name: "Display",
+    what: "A small digital face on a clock that shows the current time using lit segments.",
+    why: "The clock's whole purpose depends on being readable at a glance in a dim room the moment someone wakes or needs to check the time.",
+    has: ["led segments"],
+  },
+  {
+    slug: "led-segments",
+    name: "LED Segments",
+    what: "Fixed bar-shaped lights arranged in a figure-eight pattern, lit in combination to form each digit.",
+    why: "A full pixel grid is unnecessary for numbers alone — a small fixed set of segments lit in different combinations can form all ten digits with far fewer components and lower cost.",
+    has: [],
+  },
+  {
+    slug: "dresser",
+    name: "Dresser",
+    what: "A wide, low chest of multiple stacked drawers for storing folded clothing.",
+    why: "Not all clothes hang well in a closet — shirts, socks, and underwear are quicker to grab folded and stacked than hung, and a dresser's wide stance keeps a stack of drawers within reach without stacking them shoulder-high.",
+    has: ["drawer", "wood"],
   },
 ];

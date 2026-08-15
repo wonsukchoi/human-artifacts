@@ -1,0 +1,81 @@
+import type { Artifact } from "./types";
+
+export const musicRoom: Artifact[] = [
+  {
+    slug: "music-room",
+    name: "Music Room",
+    what: "A room set aside for playing and practicing musical instruments.",
+    why: "Instruments are loud and practicing means repeating the same phrase badly many times before it's right — a room set apart lets that noise and repetition happen without disturbing the rest of the house.",
+    has: ["piano", "guitar"],
+  },
+  {
+    slug: "piano",
+    name: "Piano",
+    what: "A large keyboard instrument that produces sound by hammers striking tensioned strings.",
+    why: "A string plucked or struck vibrates at a fixed pitch, and a whole keyboard of them tuned to different pitches lets one performer play full chords and melodies with just their hands, something no single string instrument alone allows.",
+    has: ["piano keys", "piano strings", "hammers"],
+  },
+  {
+    slug: "piano-keys",
+    name: "Piano Keys",
+    what: "The row of black and white levers on a piano that a player presses to trigger each note.",
+    why: "Each key is a lever mapped to one specific string or set of strings — pressing it is what translates a finger's motion into a hammer striking that exact pitch.",
+    has: ["wood"],
+  },
+  {
+    slug: "piano-strings",
+    name: "Piano Strings",
+    what: "Tensioned metal wires stretched across a piano's frame, each tuned to a specific pitch.",
+    why: "A string's pitch is set by its length, thickness, and tension — dozens of strings each tuned differently is what gives the instrument its full range of notes.",
+    has: ["wire"],
+  },
+  {
+    slug: "hammers",
+    name: "Hammers",
+    what: "Small felt-covered mallets inside a piano that strike a string the instant its key is pressed.",
+    why: "A string has to be struck, not just touched, to set it vibrating loud enough to hear — felt padding on the hammer softens that strike into a musical tone instead of a harsh clack.",
+    has: ["wood", "felt"],
+  },
+  {
+    slug: "felt",
+    name: "Felt",
+    what: "A dense, non-woven fabric made by matting fibers together under heat and pressure rather than weaving them.",
+    why: "A hard hammer striking a string would produce a harsh, clacking noise — felt's soft, compressible surface cushions that strike into a rounder, more musical tone.",
+    has: ["fabric"],
+  },
+  {
+    slug: "guitar",
+    name: "Guitar",
+    what: "A stringed instrument played by plucking or strumming tensioned strings over a hollow or solid body.",
+    why: "Unlike a piano's fixed hammers, a guitar's strings are touched directly by the player's hand, giving far more control over each note's timing, volume, and expression at the cost of only playing one note at a time per string.",
+    has: ["guitar strings", "guitar body", "fretboard"],
+  },
+  {
+    slug: "guitar-strings",
+    name: "Guitar Strings",
+    what: "Tensioned metal or nylon strings stretched along a guitar's neck and body.",
+    why: "Like a piano string, its pitch comes from length, thickness, and tension — but here the player's fingers pluck and press it directly rather than a hammer striking it.",
+    has: ["wire"],
+  },
+  {
+    slug: "guitar-body",
+    name: "Guitar Body",
+    what: "The hollow wooden chamber a guitar's strings are mounted across.",
+    why: "A plucked string alone is barely audible — the hollow body resonates with the string's vibration and projects it as sound loud enough to hear across a room.",
+    has: ["wood"],
+  },
+  {
+    slug: "fretboard",
+    name: "Fretboard",
+    what: "The long strip along a guitar's neck marked with raised metal frets that a player presses strings against.",
+    why: "Pressing a string down against a fret shortens its vibrating length to an exact, repeatable point — frets are what let a player hit a precise pitch reliably instead of guessing where to press.",
+    has: ["wood", "frets"],
+  },
+  {
+    slug: "frets",
+    name: "Frets",
+    what: "Thin raised metal strips embedded across a guitar's fretboard at fixed intervals.",
+    why: "Without a hard raised edge to press a string against, a finger alone couldn't reliably stop a string at an exact pitch — frets fix that stopping point precisely, the same note every time.",
+    has: ["steel"],
+  },
+];

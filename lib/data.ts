@@ -13,6 +13,11 @@ import { attic } from "./artifacts/attic";
 import { yard } from "./artifacts/yard";
 import { personalItems } from "./artifacts/personal-items";
 import { materials } from "./artifacts/materials";
+import { nursery } from "./artifacts/nursery";
+import { homeGym } from "./artifacts/home-gym";
+import { homeTheater } from "./artifacts/home-theater";
+import { playroom } from "./artifacts/playroom";
+import { musicRoom } from "./artifacts/music-room";
 
 export type { Artifact };
 
@@ -35,6 +40,11 @@ export const artifacts: Artifact[] = [
   ...yard,
   ...personalItems,
   ...materials,
+  ...nursery,
+  ...homeGym,
+  ...homeTheater,
+  ...playroom,
+  ...musicRoom,
 ];
 
 export function getArtifact(slug: string): Artifact | undefined {

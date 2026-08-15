@@ -6,7 +6,7 @@ export const personalItems: Artifact[] = [
     name: "Personal Items",
     what: "The small set of objects a person carries on their body throughout the day, not left behind in any one room.",
     why: "Some things get used everywhere, not just at home. Moving between rooms, leaving the house, or coming back needs those few items to travel with the person instead of staying fixed to a shelf.",
-    has: ["phone", "glasses", "wallet", "keys", "water bottle"],
+    has: ["phone", "glasses", "wallet", "keys", "water bottle", "backpack"],
   },
   {
     slug: "phone",
@@ -84,5 +84,19 @@ export const personalItems: Artifact[] = [
     what: "A removable or hinged piece that seals a bottle's opening.",
     why: "An open top would spill instantly inside a bag. The cap is what lets the bottle be sealed shut between sips.",
     has: ["polymer"],
+  },
+  {
+    slug: "backpack",
+    name: "Backpack",
+    what: "A fabric bag with two shoulder straps, worn on the back to carry belongings.",
+    why: "Carrying things in the hands ties up both hands and unbalances the body over a long walk — distributing the load across both shoulders on the back lets the arms stay free and spreads the weight evenly.",
+    has: ["backpack straps", "zipper", "fabric"],
+  },
+  {
+    slug: "backpack-straps",
+    name: "Backpack Straps",
+    what: "Padded fabric loops that go over the shoulders to suspend a backpack against the back.",
+    why: "A bag's full weight resting on bare shoulders through thin straps digs in and cuts off circulation on a long carry — padding spreads that same weight over a wider area of the shoulder.",
+    has: ["fabric"],
   },
 ];

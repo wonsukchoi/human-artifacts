@@ -6,7 +6,7 @@ export const entryway: Artifact[] = [
     name: "Entryway",
     what: "The first room inside a home's main entrance, used to arrive and leave.",
     why: "Coming inside means shedding outdoor gear — shoes, coats, keys — before stepping into the rest of the house. A dedicated space right at the door keeps that transition from spilling dirt and clutter further in.",
-    has: ["front door", "shoe rack", "coat hooks"],
+    has: ["front door", "shoe rack", "coat hooks", "doormat"],
   },
   {
     slug: "front-door",
@@ -28,5 +28,12 @@ export const entryway: Artifact[] = [
     what: "Wall-mounted hooks near the entrance for hanging coats and bags.",
     why: "A coat dropped anywhere else in the house ends up on furniture or the floor. A fixed hook right at the entrance gives it one obvious place to go, every time.",
     has: ["steel"],
+  },
+  {
+    slug: "doormat",
+    name: "Doormat",
+    what: "A coarse mat placed outside or just inside a door for scraping and wiping shoes.",
+    why: "Shoes track in dirt, mud, and moisture from outside — scraping them across a coarse mat right at the threshold catches most of that before it ever reaches the floor inside.",
+    has: ["fabric", "rubber"],
   },
 ];
