@@ -21,6 +21,13 @@
   box-sizing: border-box;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
 html,
 body {
   padding: 0;
@@ -47,10 +54,17 @@ a {
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-color: var(--line);
+  transition: text-decoration-color 150ms ease-out;
 }
 
 a:hover {
   text-decoration-color: var(--fg);
+}
+
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 2px;
 }
 
 .crumbs {
@@ -123,6 +137,13 @@ ul.tree li {
 
 ul.tree li a {
   color: var(--fg);
+  display: inline-block;
+  padding: 0.15rem 0;
+}
+
+.count {
+  color: var(--muted);
+  font-size: 0.85em;
 }
 
 ul.tree summary {
@@ -149,11 +170,13 @@ ul.tree details[open] > summary {
 .search input[type="search"] {
   width: 100%;
   font: inherit;
+  font-size: 16px;
   background: var(--bg);
   color: var(--fg);
   border: 1px solid var(--line);
   border-radius: 3px;
-  padding: 0.5rem 0.7rem;
+  padding: 0.6rem 0.7rem;
+  transition: border-color 150ms ease-out;
 }
 
 .search input[type="search"]::placeholder {
@@ -161,7 +184,6 @@ ul.tree details[open] > summary {
 }
 
 .search input[type="search"]:focus {
-  outline: none;
   border-color: var(--fg);
 }
 

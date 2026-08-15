@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {
   artifacts,
+  countDescendants,
   getArtifact,
   getChildSlug,
   getRootGroups,
@@ -25,6 +26,8 @@ function Branch({ artifact }: { artifact: Artifact }) {
     );
   }
 
+  const count = countDescendants(artifact.slug);
+
   return (
     <li>
       <details>
@@ -32,6 +35,7 @@ function Branch({ artifact }: { artifact: Artifact }) {
           <Link href={`/${artifact.slug}`}>
             {artifact.name.toLowerCase()}
           </Link>
+          <span className="count"> ({count})</span>
         </summary>
         <ul className="tree">
           {children.map((child) => (
@@ -58,7 +62,9 @@ export default function Home() {
 
       <Search artifacts={artifacts} />
 
-      <h2>everything, {artifacts.length} entries</h2>
+      <p className="crumbs">
+        <Link href="/all">browse everything, {artifacts.length} entries</Link>
+      </p>
 
       <h2>spaces</h2>
       <ul className="tree tree-root">

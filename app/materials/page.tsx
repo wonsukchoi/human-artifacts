@@ -30,6 +30,11 @@ export default function MaterialsPage() {
           </li>
         ))}
       </ul>
+
+      <p className="crumbs">
+        <Link href="/all">everything</Link> — the full archive, materials
+        included, in one flat list
+      </p>
     </main>
   );
 }

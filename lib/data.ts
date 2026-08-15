@@ -87,3 +87,22 @@ export function getAncestry(slug: string): Artifact[] {
 export function getChildSlug(name: string): string {
   return slugify(name);
 }
+
+/** Count of distinct artifacts reachable below this one (its whole subtree, not counting itself). */
+export function countDescendants(slug: string): number {
+  const seen = new Set<string>([slug]);
+  function walk(current: Artifact): number {
+    let count = 0;
+    for (const name of current.has) {
+      const childSlug = slugify(name);
+      if (seen.has(childSlug)) continue;
+      const child = getArtifact(childSlug);
+      if (!child) continue;
+      seen.add(childSlug);
+      count += 1 + walk(child);
+    }
+    return count;
+  }
+  const artifact = getArtifact(slug);
+  return artifact ? walk(artifact) : 0;
+}
