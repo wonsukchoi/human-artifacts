@@ -27,9 +27,9 @@ the artifact to add yourself before moving to step 2:
   existing room, or a missing part on an existing shallow leaf) over adding
   another root — the tree should stay balanced, not just longer.
 - Pick exactly one artifact. Note its chosen parent slug (or "new root" if none
-  fits). Then proceed through steps 1-7 exactly as if that name/parent had been
+  fits). Then proceed through steps 1-8 exactly as if that name/parent had been
   passed as $ARGUMENTS.
-- In the final report (step 7), say what you picked and why it was the gap.
+- In the final report (step 8), say what you picked and why it was the gap.
 
 ## 1. Load current state
 
@@ -105,7 +105,35 @@ pattern already used for `sofa frame`, `bookshelf frame`, `refrigerator shelves`
 - Never duplicate an object across files. If a part is a reuse (step 3), just
   reference its name in `has` — don't copy the object.
 
-## 6. Verify before finishing
+## 6. Review everything you touched for logical soundness
+
+Before verifying, re-read every artifact you added or wired into this run —
+new entries, the parent(s) you added a name to, and anything you reused — like
+a skeptical editor, not the person who just wrote it:
+
+- Does `has` list this thing's actual real-world components? Nothing padded
+  in to hit 2-3 items, nothing structurally obvious missing that a reader
+  would immediately question.
+- Does `why` give a real causal reason, or did it come out as a reworded
+  `what` / dictionary definition wearing a "why" label?
+- Is every reuse (an existing slug referenced in `has`) genuinely the same
+  real-world thing here, or was it a convenient fit chosen just to avoid
+  writing a new node? If a reuse doesn't actually hold up under its existing
+  `why`, undo it and give this context its own disambiguated entry instead
+  (step 4).
+- Any accidental cycle — X has Y, and Y (directly or a few levels down)
+  has X back?
+- Any near-duplicate of something that already exists elsewhere in the tree
+  under a different slug or name (same real thing, described twice)?
+
+If something's off, fix it directly — rewrite the `why`, swap a bad reuse for
+a proper new node, correct `has`. Don't just note the problem and move on;
+resolve it before step 7. This applies to whatever you touched this run, not
+a full-tree audit — you're not re-litigating the other 150+ entries every
+time, just making sure what you're adding right now actually holds together
+and doesn't quietly break something it now touches.
+
+## 7. Verify before finishing
 
 Run these checks and fix anything that fails before reporting done:
 
@@ -129,9 +157,10 @@ npx next build
 
 Both must be clean (no dup slugs, build succeeds) before you're done.
 
-## 7. Register and report
+## 8. Register and report
 
 Call `graph_register_edit` with `files` listing every file you actually edited
 under `lib/artifacts/` (plus `lib/data.ts` if you added a new room file) and a
 one-line summary of what was added. Then report back tersely: what was added,
-how deep it went, how many new pages, new total page count.
+how deep it went, how many new pages, new total page count, and — if step 6
+caught and fixed anything — what was wrong and what you changed.
