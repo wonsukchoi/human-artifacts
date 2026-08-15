@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { artifacts, getArtifact, getAncestry, getChildSlug } from "@/lib/data";
+import {
+  artifacts,
+  getArtifact,
+  getAncestry,
+  getChildSlug,
+  getParents,
+} from "@/lib/data";
 
 export function generateStaticParams() {
   return artifacts.map((a) => ({ slug: a.slug }));
@@ -30,23 +36,29 @@ export default async function ArtifactPage({
   const artifact = getArtifact(slug);
   if (!artifact) notFound();
 
-  const ancestry = getAncestry(slug);
+  const parents = getParents(slug);
+  const shared = parents.length > 1;
+  const ancestry = shared ? [] : getAncestry(slug);
 
   return (
     <main>
       <div className="crumbs">
         <Link href="/">home</Link>
-        {ancestry.map((a) => (
-          <span key={a.slug}>
-            {" "}
-            /{" "}
-            {a.slug === slug ? (
-              a.name.toLowerCase()
-            ) : (
-              <Link href={`/${a.slug}`}>{a.name.toLowerCase()}</Link>
-            )}
-          </span>
-        ))}
+        {shared ? (
+          <span> / {artifact.name.toLowerCase()}</span>
+        ) : (
+          ancestry.map((a) => (
+            <span key={a.slug}>
+              {" "}
+              /{" "}
+              {a.slug === slug ? (
+                a.name.toLowerCase()
+              ) : (
+                <Link href={`/${a.slug}`}>{a.name.toLowerCase()}</Link>
+              )}
+            </span>
+          ))
+        )}
       </div>
 
       <h1>{artifact.name.toLowerCase()}</h1>
@@ -56,6 +68,19 @@ export default async function ArtifactPage({
 
       <h2>why</h2>
       <p>{artifact.why}</p>
+
+      {shared && (
+        <>
+          <h2>used in</h2>
+          <ul className="plain">
+            {parents.map((p) => (
+              <li key={p.slug}>
+                <Link href={`/${p.slug}`}>{p.name.toLowerCase()}</Link>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
 
       {artifact.has.length > 0 && (
         <>

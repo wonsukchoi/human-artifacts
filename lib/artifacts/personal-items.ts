@@ -1,0 +1,88 @@
+import type { Artifact } from "./types";
+
+export const personalItems: Artifact[] = [
+  {
+    slug: "personal-items",
+    name: "Personal Items",
+    what: "The small set of objects a person carries on their body throughout the day, not left behind in any one room.",
+    why: "Some things get used everywhere, not just at home. Moving between rooms, leaving the house, or coming back needs those few items to travel with the person instead of staying fixed to a shelf.",
+    has: ["phone", "glasses", "wallet", "keys", "water bottle"],
+  },
+  {
+    slug: "phone",
+    name: "Phone",
+    what: "A handheld device that connects to a wireless network for calls, messaging, and internet access.",
+    why: "People need to reach and be reached while away from any fixed location. A landline tied to a wall can't do that, so the phone itself became the thing that travels with the person instead.",
+    has: ["screen", "battery"],
+  },
+  {
+    slug: "battery",
+    name: "Battery",
+    what: "A sealed cell that stores electrical energy chemically and releases it on demand.",
+    why: "A phone needs power everywhere it goes, not just plugged into a wall. A battery is what lets it keep working disconnected from any outlet for hours at a time.",
+    has: [],
+  },
+  {
+    slug: "glasses",
+    name: "Glasses",
+    what: "Two shaped lenses held in a frame in front of the eyes to correct or adjust vision.",
+    why: "Many eyes don't naturally focus light exactly onto the retina. A precisely curved lens in front of the eye bends light just enough to correct that before it reaches the eye.",
+    has: ["lens", "glasses frame"],
+  },
+  {
+    slug: "lens",
+    name: "Lens",
+    what: "A precisely curved piece of transparent material that bends light passing through it.",
+    why: "Bending light in a controlled, precise curve is the only way to refocus an image before it reaches the eye — flat glass wouldn't change the light's path at all.",
+    has: ["glass"],
+  },
+  {
+    slug: "glasses-frame",
+    name: "Glasses Frame",
+    what: "The rigid piece that holds a pair of lenses in place in front of the eyes and rests on the nose and ears.",
+    why: "Lenses need to stay fixed at a precise distance and angle from the eyes constantly, through movement. The frame is what keeps them from sliding out of position.",
+    has: ["polymer"],
+  },
+  {
+    slug: "wallet",
+    name: "Wallet",
+    what: "A small flat case for carrying cards and cash.",
+    why: "Cash and cards are thin, loose, and easy to drop or lose individually. A wallet bundles them into one pocket-sized case that's harder to misplace and faster to grab.",
+    has: ["fabric", "stitching"],
+  },
+  {
+    slug: "keys",
+    name: "Keys",
+    what: "One or more shaped metal blades, each cut with a unique ridge pattern that matches one specific lock, usually held together on a ring.",
+    why: "A lock needs to tell one person's access from everyone else's. Cutting a blade's ridges to match only one lock's pins makes that distinction physical, and a ring keeps several of them together instead of loose in a pocket.",
+    has: ["steel", "keyring"],
+  },
+  {
+    slug: "keyring",
+    name: "Keyring",
+    what: "A split metal loop that keys are threaded onto to keep them together.",
+    why: "Keys are easy to lose one at a time. Threading them onto a single loop means losing all of them takes one dropped ring instead of several separate blades slipping out of a pocket.",
+    has: ["steel"],
+  },
+  {
+    slug: "water-bottle",
+    name: "Water Bottle",
+    what: "A sealed, reusable container for carrying drinking water.",
+    why: "The body needs water throughout the day, not just when near a sink or fountain. A sealed portable container is what lets someone carry a supply of it with them instead of depending on finding water on the spot.",
+    has: ["bottle", "cap"],
+  },
+  {
+    slug: "bottle",
+    name: "Bottle",
+    what: "The hollow vessel of a bottle that holds its contents.",
+    why: "A liquid needs to be held in a sealed shape that won't spill in a bag or leak under pressure. The vessel is what actually contains it — everything else on a bottle just seals or labels it.",
+    has: ["steel"],
+  },
+  {
+    slug: "cap",
+    name: "Cap",
+    what: "A removable or hinged piece that seals a bottle's opening.",
+    why: "An open top would spill instantly inside a bag. The cap is what lets the bottle be sealed shut between sips.",
+    has: ["polymer"],
+  },
+];

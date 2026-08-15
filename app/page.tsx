@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { artifacts, getArtifact, getChildSlug, getRoots, type Artifact } from "@/lib/data";
+import {
+  artifacts,
+  getArtifact,
+  getChildSlug,
+  getRootGroups,
+  type Artifact,
+} from "@/lib/data";
 import { Search } from "./search";
 
 function getChildArtifacts(artifact: Artifact): Artifact[] {
@@ -38,7 +44,7 @@ function Branch({ artifact }: { artifact: Artifact }) {
 }
 
 export default function Home() {
-  const roots = getRoots();
+  const { spaces, nonSpatial } = getRootGroups();
 
   return (
     <main>
@@ -53,11 +59,29 @@ export default function Home() {
       <Search artifacts={artifacts} />
 
       <h2>everything, {artifacts.length} entries</h2>
+
+      <h2>spaces</h2>
       <ul className="tree tree-root">
-        {roots.map((artifact) => (
+        {spaces.map((artifact) => (
           <Branch key={artifact.slug} artifact={artifact} />
         ))}
       </ul>
+
+      {nonSpatial.length > 0 && (
+        <>
+          <h2>not tied to a space</h2>
+          <ul className="tree tree-root">
+            {nonSpatial.map((artifact) => (
+              <Branch key={artifact.slug} artifact={artifact} />
+            ))}
+          </ul>
+        </>
+      )}
+
+      <p className="crumbs">
+        <Link href="/materials">materials index</Link> — every raw material
+        and generic hardware piece, in one flat list
+      </p>
 
       <footer>
         text-based. no images. just what things are and why.

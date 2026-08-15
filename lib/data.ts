@@ -11,6 +11,7 @@ import { laundryRoom } from "./artifacts/laundry-room";
 import { entryway } from "./artifacts/entryway";
 import { attic } from "./artifacts/attic";
 import { yard } from "./artifacts/yard";
+import { personalItems } from "./artifacts/personal-items";
 import { materials } from "./artifacts/materials";
 
 export type { Artifact };
@@ -32,6 +33,7 @@ export const artifacts: Artifact[] = [
   ...entryway,
   ...attic,
   ...yard,
+  ...personalItems,
   ...materials,
 ];
 
@@ -47,9 +49,26 @@ export function getRoots(): Artifact[] {
   return artifacts.filter((a) => !childSlugs.has(a.slug));
 }
 
+/** Root slugs that aren't tied to any physical room — carried, not contained. */
+const NON_SPATIAL_ROOT_SLUGS = new Set(["personal-items"]);
+
+/** Top-level roots split into physical spaces vs. roots not tied to any one space. */
+export function getRootGroups(): { spaces: Artifact[]; nonSpatial: Artifact[] } {
+  const roots = getRoots();
+  return {
+    spaces: roots.filter((a) => !NON_SPATIAL_ROOT_SLUGS.has(a.slug)),
+    nonSpatial: roots.filter((a) => NON_SPATIAL_ROOT_SLUGS.has(a.slug)),
+  };
+}
+
 /** The artifact that lists this slug under "has", if any. */
 export function getParent(slug: string): Artifact | undefined {
   return artifacts.find((a) => a.has.some((name) => slugify(name) === slug));
+}
+
+/** Every artifact that lists this slug under "has" — a node reused across branches has more than one. */
+export function getParents(slug: string): Artifact[] {
+  return artifacts.filter((a) => a.has.some((name) => slugify(name) === slug));
 }
 
 /** Root-to-self chain of artifacts, for breadcrumbs. */
