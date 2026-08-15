@@ -8,6 +8,17 @@ sink...), and keep opening its parts until you hit a raw material or an atom.
 Every page answers the same two questions: **what** is this, and **why** does
 it actually exist — the causal reason, not a dictionary definition.
 
+## Why this exists
+
+This is an archive, not just a catalog. The goal is a record of what an
+ordinary human household actually contained and why — written plainly enough
+that it still makes sense long after the everyday objects it describes have
+stopped being obvious, whether that's a museum visitor, a historian, or
+whatever reads this after us. Open source keeps it alive past any one
+maintainer: the repo's commit history is itself the timestamp, dating what
+was contemporary and when, without needing a date field bolted onto the data.
+Contributions extend the archive; see [CONTRIBUTING.md](./CONTRIBUTING.md).
+
 ## How the data is organized
 
 Every entry is an `Artifact`:

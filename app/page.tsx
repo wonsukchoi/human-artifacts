@@ -59,7 +59,12 @@ export default function Home() {
         ))}
       </ul>
 
-      <footer>text-based. no images. just what things are and why.</footer>
+      <footer>
+        text-based. no images. just what things are and why.
+        <br />
+        an open-source archive of what was contemporary and why — for
+        whoever reads this next, however far off that is.
+      </footer>
     </main>
   );
 }
