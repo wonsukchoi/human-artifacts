@@ -1,10 +1,11 @@
 ---
 description: Research and add a new place or object to Human Artifacts, decomposed down to its deepest sensible level
-argument-hint: [name] [parent-slug (optional)]
+argument-hint: [name (optional)] [parent-slug (optional)]
 ---
 
-You are extending the Human Artifacts site (`lib/data.ts`). $ARGUMENTS gives a name
-(the place or object to add) and optionally a parent slug to nest it under
+You are extending the Human Artifacts site (`lib/artifacts/*.ts`, composed by
+`lib/data.ts`). $ARGUMENTS, if given,
+names the place or object to add and optionally a parent slug to nest it under
 (e.g. `bathtub bathroom` nests bathtub under the bathroom room; `bathtub` alone
 means figure out the best home for it yourself).
 
@@ -12,14 +13,35 @@ Work autonomously — this command is meant to run repeatedly without hand-holdi
 Only stop and ask if something is genuinely ambiguous (e.g. the name could mean
 two very different things).
 
+## 0. No name given? Find one yourself
+
+If $ARGUMENTS is empty, skip straight to step 1, load the full tree, then pick
+the artifact to add yourself before moving to step 2:
+
+- Scan existing rooms/objects for an obvious missing sibling — something a real
+  human space or object would have that isn't yet in the tree (e.g. a room
+  missing an object every version of that room has; an appliance missing a
+  standard component; a `has` list that's thinner than a comparable entry
+  elsewhere in the tree).
+- Prefer filling a real gap at a shallow/mid level (new sibling object under an
+  existing room, or a missing part on an existing shallow leaf) over adding
+  another root — the tree should stay balanced, not just longer.
+- Pick exactly one artifact. Note its chosen parent slug (or "new root" if none
+  fits). Then proceed through steps 1-7 exactly as if that name/parent had been
+  passed as $ARGUMENTS.
+- In the final report (step 7), say what you picked and why it was the gap.
+
 ## 1. Load current state
 
-Read `lib/data.ts` in full. Build a mental list of every existing `slug` — you must
-never create a duplicate. Note which existing leaf artifacts are **shared raw
-materials or generic hardware** (steel, wood, glass, ceramic, fabric, wire, rubber,
-polymer, monomer, chain-bond, carbon, hydrogen, oxygen, hinges, faucet, drain,
-rivets, etc.) — these exist so multiple branches can reuse the same page instead
-of duplicating content.
+Read every file under `lib/artifacts/` (`types.ts`, `materials.ts`, `kitchen.ts`,
+`bedroom.ts`, `bathroom.ts`, `living-room.ts` — and any others added since) in
+full. Build a mental list of every existing `slug` across all of them — you must
+never create a duplicate, even across files. `materials.ts` holds the **shared
+raw materials and generic hardware** (steel, wood, glass, ceramic, fabric, wire,
+rubber, polymer, monomer, chain-bond, carbon, hydrogen, oxygen, hinges, faucet,
+valve, drain, trap, rivets, etc.) — these exist so multiple branches can reuse
+the same page instead of duplicating content. Each room file only holds nodes
+specific to that room's subtree.
 
 ## 2. Research
 
@@ -28,7 +50,7 @@ Figure out, for the requested artifact:
 - **why** it exists — 1-2 sentences giving the actual causal reason humans need
   it (not a dictionary definition). Match the existing voice exactly: direct,
   concrete, no fluff, no "In today's world..." framing. Look at a few existing
-  entries in `lib/data.ts` first to calibrate tone before writing.
+  entries under `lib/artifacts/` first to calibrate tone before writing.
 - **has** — 2-3 parts/components it's made of or contains.
 
 ## 3. Decompose recursively, all the way down
@@ -65,11 +87,17 @@ pattern already used for `sofa frame`, `bookshelf frame`, `refrigerator shelves`
 ## 5. Wire it in
 
 - If a parent slug was given (or you picked an existing room to attach to), add
-  the new artifact's name to that parent's `has` array.
+  the new artifact's name to that parent's `has` array, in that parent's file.
 - If no sensible existing parent fits, add it as a new root-level entry (like a
   new room) — it'll automatically show up on the home page tree via `getRoots()`.
-- Insert every new artifact object into the `artifacts` array in `lib/data.ts`
-  using Edit, following the exact same object shape as existing entries.
+  A genuinely new room gets its own new file under `lib/artifacts/` (mirror the
+  shape of `kitchen.ts`); import and spread it into `artifacts` in `lib/data.ts`.
+- Every new artifact object goes into the file for the room/branch it belongs
+  to — **except** shared raw materials or generic hardware (per step 1's list),
+  which go in `lib/artifacts/materials.ts` instead, even if only one branch uses
+  it so far. Use Edit, following the exact same object shape as existing entries.
+- Never duplicate an object across files. If a part is a reuse (step 3), just
+  reference its name in `has` — don't copy the object.
 
 ## 6. Verify before finishing
 
@@ -78,8 +106,12 @@ Run these checks and fix anything that fails before reporting done:
 ```
 node -e '
 const fs = require("fs");
-const src = fs.readFileSync("lib/data.ts", "utf8");
-const slugs = [...src.matchAll(/slug: "([^"]+)"/g)].map(m => m[1]);
+const files = fs.readdirSync("lib/artifacts").filter(f => f !== "types.ts").map(f => "lib/artifacts/" + f);
+const slugs = [];
+for (const f of files) {
+  const src = fs.readFileSync(f, "utf8");
+  for (const m of src.matchAll(/slug: "([^"]+)"/g)) slugs.push(m[1]);
+}
 const seen = new Map();
 let dup = false;
 for (const s of slugs) seen.set(s, (seen.get(s)||0)+1);
@@ -93,6 +125,7 @@ Both must be clean (no dup slugs, build succeeds) before you're done.
 
 ## 7. Register and report
 
-Call `graph_register_edit` with `files: ["lib/data.ts"]` and a one-line summary
-of what was added. Then report back tersely: what was added, how deep it went,
-how many new pages, new total page count.
+Call `graph_register_edit` with `files` listing every file you actually edited
+under `lib/artifacts/` (plus `lib/data.ts` if you added a new room file) and a
+one-line summary of what was added. Then report back tersely: what was added,
+how deep it went, how many new pages, new total page count.

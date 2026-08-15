@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Human Artifacts
 
-## Getting Started
+What humans use, what it does, and why it exists.
 
-First, run the development server:
+Human Artifacts is a text-based, recursive catalog of manmade places and
+objects. Start at a room (kitchen, bathroom...), open an object in it (stove,
+sink...), and keep opening its parts until you hit a raw material or an atom.
+Every page answers the same two questions: **what** is this, and **why** does
+it actually exist — the causal reason, not a dictionary definition.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## How the data is organized
+
+Every entry is an `Artifact`:
+
+```ts
+type Artifact = {
+  slug: string;
+  name: string;
+  what: string; // one factual sentence
+  why: string;  // 1-2 sentences, the causal reason this exists
+  has: string[]; // names of parts/contents
+};
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`has` entries link to other artifacts by name — if `slugify(name)` matches an
+existing artifact's `slug`, that's a link, not a duplicate. This is how
+`legs` under a bed frame and `legs` under a coffee table point at the same
+page instead of two copies of the same content.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The data lives under `lib/artifacts/`, split by branch:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `lib/artifacts/types.ts` — the `Artifact` type
+- `lib/artifacts/materials.ts` — shared raw materials and generic hardware
+  (steel, wood, glass, polymer, hinges, faucet, rivets...) reused across
+  multiple branches
+- `lib/artifacts/kitchen.ts`, `bedroom.ts`, `bathroom.ts`, `living-room.ts` —
+  one file per room/branch, holding only the nodes specific to it
+- `lib/data.ts` — composes all of the above into the `artifacts` array and
+  exposes `getArtifact`, `getRoots`, `getParent`, `getAncestry`
 
-## Learn More
+A tree bottoms out at a raw material (`has: []`), a simple mechanical/electrical
+primitive that doesn't meaningfully decompose further (spring, rivets,
+contacts), or true atoms (carbon, hydrogen, oxygen) — never subatomic
+particles, since that stops being a human artifact.
 
-To learn more about Next.js, take a look at the following resources:
+## Getting started
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm install
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Open [http://localhost:3000](http://localhost:3000).
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See [CONTRIBUTING.md](./CONTRIBUTING.md) — the short version is: use
+`/add-artifact <name> [parent-slug]` if you have Claude Code, or add the entry
+by hand following the shape above, then run the verification steps in that
+guide before opening a PR.
