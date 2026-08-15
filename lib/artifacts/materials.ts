@@ -129,6 +129,13 @@ export const materials: Artifact[] = [
     has: [],
   },
   {
+    slug: "cardboard",
+    name: "Cardboard",
+    what: "A stiff, layered paper material with a corrugated inner layer for strength.",
+    why: "Flat paper alone bends and tears under any real weight. A corrugated ridge sandwiched between two flat sheets holds a rigid shape while staying light and cheap to produce in bulk.",
+    has: [],
+  },
+  {
     slug: "rubber",
     name: "Rubber",
     what: "A flexible, grippy material that resists sliding even when wet.",

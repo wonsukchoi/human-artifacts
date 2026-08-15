@@ -6,7 +6,7 @@ export const kitchen: Artifact[] = [
     name: "Kitchen",
     what: "A room where humans prepare, cook, and store food.",
     why: "Raw food is often unsafe or hard to digest. Cooking breaks it down, kills pathogens, and makes more calories available. Storage keeps food from spoiling between meals.",
-    has: ["knife", "stove", "refrigerator", "sink", "trash bin"],
+    has: ["knife", "stove", "refrigerator", "sink", "trash bin", "cabinets"],
   },
   {
     slug: "knife",
@@ -28,6 +28,27 @@ export const kitchen: Artifact[] = [
     what: "An insulated, mechanically cooled cabinet that keeps food below room temperature.",
     why: "Bacteria multiply fast at room temperature and spoil food within hours or days. Cold slows that growth dramatically, letting food stay safe to eat for days or weeks.",
     has: ["compressor", "insulated cabinet", "refrigerator shelves"],
+  },
+  {
+    slug: "cabinets",
+    name: "Cabinets",
+    what: "A fixed set of built-in storage compartments along a kitchen wall, closed off by doors and holding dishes, cookware, and dry goods.",
+    why: "Dishes and dry goods need to be kept off the counter and out of dust, but still within arm's reach while cooking — closed doors also keep splatter and steam from the stove off anything not currently in use.",
+    has: ["cabinet shelves", "cabinet door"],
+  },
+  {
+    slug: "cabinet-shelves",
+    name: "Cabinet Shelves",
+    what: "Fixed horizontal boards inside a cabinet that hold stacked dishes, pots, or dry goods.",
+    why: "Stacking cookware directly on top of itself risks chipping and buries whatever's on the bottom. A shelf gives each item its own level instead of one deep pile.",
+    has: ["wood"],
+  },
+  {
+    slug: "cabinet-door",
+    name: "Cabinet Door",
+    what: "A small hinged panel that closes off a cabinet's opening.",
+    why: "Grease and steam drift up from the stove during cooking. A closed door keeps that residue off dishes and food stored inside instead of settling directly on them.",
+    has: ["wood", "hinges"],
   },
   {
     slug: "blade",

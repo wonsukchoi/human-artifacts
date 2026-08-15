@@ -6,7 +6,21 @@ export const laundryRoom: Artifact[] = [
     name: "Laundry Room",
     what: "A room equipped with machines for washing and drying clothes.",
     why: "Fabric holds onto sweat, oil, and stains that plain water alone won't lift. Dedicated machines agitate, heat, and spin clothes far more thoroughly than hand-washing, and doing it in one place keeps the mess and noise contained.",
-    has: ["washing machine", "dryer"],
+    has: ["washing machine", "dryer", "laundry basket"],
+  },
+  {
+    slug: "laundry-basket",
+    name: "Laundry Basket",
+    what: "A perforated basket for carrying and holding dirty clothes before they're washed.",
+    why: "Dirty clothes pile up between wash days and need somewhere to sit — sealing sweat-damp fabric in a solid bin traps moisture and starts mildew, so the basket's open weave keeps air moving through the pile instead.",
+    has: ["polymer", "basket handles"],
+  },
+  {
+    slug: "basket-handles",
+    name: "Basket Handles",
+    what: "Two molded grips on opposite sides of a basket's rim, sized to be gripped one in each hand.",
+    why: "A full basket of clothes is heavy and awkward to hug against the body — a grip on each side lets it be carried steadily with both hands and swung up onto a hip or into a machine.",
+    has: ["polymer"],
   },
   {
     slug: "washing-machine",

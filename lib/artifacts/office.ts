@@ -34,7 +34,7 @@ export const office: Artifact[] = [
     name: "Computer",
     what: "An electronic device for processing and displaying digital information, used for work at a desk.",
     why: "Most desk work today is digital — writing, calculating, and communicating happen faster and more flexibly on a screen than on paper.",
-    has: ["screen", "keyboard"],
+    has: ["screen", "keyboard", "mouse"],
   },
   {
     slug: "keyboard",
@@ -42,5 +42,26 @@ export const office: Artifact[] = [
     what: "A grid of mechanical buttons, each mapped to a character or command, used to enter text and instructions.",
     why: "Typing requires converting a huge set of discrete symbols into signals a computer can process — dedicated keys, one per symbol, are faster and more reliable than any other manual input method devised so far.",
     has: ["buttons"],
+  },
+  {
+    slug: "mouse",
+    name: "Mouse",
+    what: "A handheld pointing device that translates its movement across a surface into cursor movement on screen.",
+    why: "A keyboard can trigger commands and enter text but can't point at an arbitrary spot on screen — the mouse gives direct, continuous control over an on-screen cursor for anything not tied to a fixed key.",
+    has: ["sensor", "buttons", "scroll wheel"],
+  },
+  {
+    slug: "sensor",
+    name: "Sensor",
+    what: "A small optical or laser component on the underside of a mouse that detects motion across a surface.",
+    why: "Something has to actually measure how far and which direction the mouse moves. The sensor takes rapid snapshots of the surface beneath it and calculates the displacement between them.",
+    has: [],
+  },
+  {
+    slug: "scroll-wheel",
+    name: "Scroll Wheel",
+    what: "A small notched wheel set between a mouse's buttons that spins to scroll a page or list.",
+    why: "Scrolling by dragging a page's edge is slow and pulls attention away from the cursor. A wheel under the fingertip lets a person scroll continuously without moving the hand off the mouse at all.",
+    has: ["detents"],
   },
 ];

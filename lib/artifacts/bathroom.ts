@@ -6,7 +6,7 @@ export const bathroom: Artifact[] = [
     name: "Bathroom",
     what: "A room where humans wash and dispose of bodily waste.",
     why: "Waste and unwashed skin both carry pathogens. Containing waste disposal and washing to one plumbed room keeps disease from spreading through the rest of the home.",
-    has: ["toilet", "shower", "sink", "mirror", "bath mat"],
+    has: ["toilet", "shower", "bathtub", "sink", "mirror", "bath mat"],
   },
   {
     slug: "toilet",
@@ -63,6 +63,20 @@ export const bathroom: Artifact[] = [
     what: "Small individual openings that each shape water into a single narrow stream.",
     why: "Many small streams cover far more surface area evenly than one single wide stream would at the same water pressure.",
     has: [],
+  },
+  {
+    slug: "bathtub",
+    name: "Bathtub",
+    what: "A fixed basin built into a bathroom floor that a person sits or lies in, filled with water for washing or soaking.",
+    why: "A shower rinses the body but doesn't let water pool around it — full immersion loosens muscles and soaks off dirt in a way a standing spray can't, and it's the only safe way to bathe an infant or anyone who can't stand unsupported.",
+    has: ["tub", "faucet", "drain"],
+  },
+  {
+    slug: "tub",
+    name: "Tub",
+    what: "The deep, sealed basin shell of a bathtub that holds standing water around a submerged body.",
+    why: "It has to hold several inches of standing water pooled around a body without leaking or draining right away, unlike a sink or shower basin built to channel water straight through.",
+    has: ["ceramic"],
   },
   {
     slug: "sink",
