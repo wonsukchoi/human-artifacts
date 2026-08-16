@@ -6,7 +6,7 @@ export const personalItems: Artifact[] = [
     name: "Personal Items",
     what: "The small set of objects a person carries on their body throughout the day, not left behind in any one room.",
     why: "Some things get used everywhere, not just at home. Moving between rooms, leaving the house, or coming back needs those few items to travel with the person instead of staying fixed to a shelf.",
-    has: ["phone", "glasses", "wallet", "keys", "water bottle", "backpack"],
+    has: ["phone", "glasses", "wallet", "keys", "water bottle", "backpack", "sunglasses", "umbrella"],
   },
   {
     slug: "phone",
@@ -98,5 +98,26 @@ export const personalItems: Artifact[] = [
     what: "Padded fabric loops that go over the shoulders to suspend a backpack against the back.",
     why: "A bag's full weight resting on bare shoulders through thin straps digs in and cuts off circulation on a long carry — padding spreads that same weight over a wider area of the shoulder.",
     has: ["fabric"],
+  },
+  {
+    slug: "sunglasses",
+    name: "Sunglasses",
+    what: "Tinted glasses worn to reduce glare and UV exposure to the eyes outdoors.",
+    why: "Bright sunlight and UV rays overload the eye's ability to adjust and can damage the retina over repeated exposure — tinted, UV-filtering lenses cut that brightness and radiation down to a comfortable, safer level.",
+    has: ["lens", "glasses frame"],
+  },
+  {
+    slug: "umbrella",
+    name: "Umbrella",
+    what: "A collapsible fabric canopy on a folding frame, carried to block rain overhead.",
+    why: "Rain falls from directly above and soaks anyone exposed to it while walking — a canopy held overhead blocks that vertical path, and folding it collapsible lets it be carried compactly when not raining.",
+    has: ["fabric", "umbrella frame"],
+  },
+  {
+    slug: "umbrella-frame",
+    name: "Umbrella Frame",
+    what: "The folding ribs and shaft that hold an umbrella's fabric canopy open and collapse it shut.",
+    why: "Fabric alone has no shape and would just collapse flat — spring-loaded ribs radiating from a central shaft push it out into a taut dome and fold it back down again on command.",
+    has: ["steel", "spring"],
   },
 ];

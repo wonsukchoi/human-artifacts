@@ -1,0 +1,81 @@
+import type { Artifact } from "./types";
+
+export const arcadeRoom: Artifact[] = [
+  {
+    slug: "arcade-room",
+    name: "Arcade Room",
+    what: "A room filled with standalone arcade cabinets and pinball machines for gameplay.",
+    why: "Arcade cabinets are large, loud, and need dedicated floor space and power — a room built around them lets several stand side by side the way they would in a public arcade, instead of one machine crammed into a corner of another room.",
+    has: ["arcade cabinet", "pinball machine", "air hockey table", "claw machine", "token machine"],
+  },
+  {
+    slug: "arcade-cabinet",
+    name: "Arcade Cabinet",
+    what: "A tall standalone cabinet housing a screen, speakers, and joystick controls for a single arcade game.",
+    why: "A home computer or console needs a separate screen and controller setup — a cabinet integrates the display, sound, and physical controls into one self-contained unit built specifically around one game's control scheme.",
+    has: ["screen", "joystick"],
+  },
+  {
+    slug: "joystick",
+    name: "Joystick",
+    what: "A spring-centered lever that a player tilts to move a character or cursor within an arcade game.",
+    why: "A directional lever gives faster, more precise multi-directional input under one hand than a keyboard's separate arrow keys — the spring return snaps it back to center the instant it's released, ready for the next move.",
+    has: ["spring"],
+  },
+  {
+    slug: "pinball-machine",
+    name: "Pinball Machine",
+    what: "A glass-topped table game where a steel ball is launched and kept in play by flippers, scoring points off bumpers and targets.",
+    why: "A ball rolling under gravity alone would just fall straight to the drain — flippers give the player active control to keep it in play and aim it at scoring targets, turning pure physics into a skill-based game.",
+    has: ["pinball", "flippers"],
+  },
+  {
+    slug: "pinball",
+    name: "Pinball",
+    what: "A small, heavy steel ball that rolls and bounces across a pinball machine's playfield.",
+    why: "The ball's weight and momentum are what make bumpers and ramps interesting to play against — a lighter ball would lose speed too fast and roll unpredictably off every small bump on the playfield.",
+    has: ["steel"],
+  },
+  {
+    slug: "flippers",
+    name: "Flippers",
+    what: "Spring-loaded paddles at the bottom of a pinball playfield that a player triggers to knock the ball back upward.",
+    why: "Without a way to actively redirect it, the ball would simply roll down and drain every time — flippers give the player split-second control to intercept and relaunch it back up into play.",
+    has: ["spring"],
+  },
+  {
+    slug: "air-hockey-table",
+    name: "Air Hockey Table",
+    what: "A low-friction table with a puck that glides on a cushion of air blown up through small holes in the surface.",
+    why: "Sliding friction would slow a puck to a stop within seconds — a constant stream of air lifts it just enough to nearly float, letting it move fast and unpredictably across the table the way the game depends on.",
+    has: ["blower fan", "puck"],
+  },
+  {
+    slug: "puck",
+    name: "Puck",
+    what: "A flat plastic disc struck back and forth across an air hockey table.",
+    why: "It needs to be light enough to glide easily on the air cushion but heavy enough to hold a straight line when struck — a flat plastic disc balances both, unlike a ball that would just roll off course.",
+    has: ["polymer"],
+  },
+  {
+    slug: "claw-machine",
+    name: "Claw Machine",
+    what: "A glass-walled cabinet where a player steers a mechanical claw to try to grab a prize from a pile.",
+    why: "A pile of loose prizes needs some way to be selected and retrieved without opening the case — a joystick-controlled claw lets a player attempt that retrieval themselves instead of a staff member reaching in.",
+    has: ["claw", "joystick"],
+  },
+  {
+    slug: "claw",
+    name: "Claw",
+    what: "A small three- or four-pronged mechanical gripper on a motorized arm that lowers, closes, and lifts to grab a prize.",
+    why: "Prizes are irregular shapes piled loosely together — a gripping claw is what actually closes around one and lifts it clear of the pile, rather than just pushing or scooping.",
+    has: ["motor"],
+  },
+  {
+    slug: "token-machine",
+    name: "Token Machine",
+    what: "A coin-fed machine that dispenses game tokens in exchange for cash.",
+    why: "Individual arcade games are metered by token, not by loose change of varying denominations — a single machine converts any bill or coin into a standard token every game on the floor accepts.",
+    has: ["steel"],
+  },
+];

@@ -6,14 +6,21 @@ export const bedroom: Artifact[] = [
     name: "Bedroom",
     what: "A room where humans sleep and rest.",
     why: "The body and brain need extended, uninterrupted downtime to repair tissue and consolidate memory. A dark, quiet, enclosed space makes that rest possible.",
-    has: ["bed", "closet", "lamp", "nightstand", "curtains", "dresser"],
+    has: ["bed", "closet", "lamp", "nightstand", "curtains", "dresser", "dressing mirror", "jewelry box"],
   },
   {
     slug: "bed",
     name: "Bed",
     what: "A raised, padded surface for lying down and sleeping.",
     why: "Sleeping on bare ground is cold, hard, and uneven, which disturbs sleep and strains joints. Elevation and padding regulate body temperature and cushion pressure points.",
-    has: ["mattress", "frame", "pillow"],
+    has: ["mattress", "frame", "pillow", "blanket"],
+  },
+  {
+    slug: "blanket",
+    name: "Blanket",
+    what: "A large layer of fabric laid over a sleeper on top of the mattress and sheets.",
+    why: "The body loses heat into open air overnight, and room heating alone wastes energy warming a whole space just to keep one person warm. A blanket traps a layer of body-warmed air right against the skin instead.",
+    has: ["fabric", "stitching"],
   },
   {
     slug: "mattress",
@@ -266,5 +273,19 @@ export const bedroom: Artifact[] = [
     what: "A wide, low chest of multiple stacked drawers for storing folded clothing.",
     why: "Not all clothes hang well in a closet — shirts, socks, and underwear are quicker to grab folded and stacked than hung, and a dresser's wide stance keeps a stack of drawers within reach without stacking them shoulder-high.",
     has: ["drawer", "wood"],
+  },
+  {
+    slug: "dressing-mirror",
+    name: "Dressing Mirror",
+    what: "A tall freestanding or wall-mounted mirror in a bedroom, large enough to show a full-body reflection.",
+    why: "Checking how an outfit looks together needs to see more than a face — a mirror large enough to show the whole body is what a small bathroom mirror can't provide.",
+    has: ["glass", "reflective coating", "mirror-frame"],
+  },
+  {
+    slug: "jewelry-box",
+    name: "Jewelry Box",
+    what: "A small lidded box, often lined with fabric, for storing rings, necklaces, and other jewelry.",
+    why: "Loose jewelry left on a dresser tangles into knots and gets lost in drawer clutter — a dedicated lined box keeps small pieces separated and protected instead of tangled together.",
+    has: ["wood", "fabric"],
   },
 ];

@@ -6,7 +6,7 @@ export const attic: Artifact[] = [
     name: "Attic",
     what: "An enclosed space directly under a home's roof, used mainly for storage.",
     why: "Roof framing leaves a wedge of otherwise-unused space above the living floors. Insulating and flooring it just enough to store boxes turns dead space into storage without adding to the home's footprint.",
-    has: ["insulation", "flooring", "attic ladder", "storage boxes"],
+    has: ["insulation", "flooring", "attic ladder", "storage boxes", "attic fan", "rafters", "attic window"],
   },
   {
     slug: "storage-boxes",
@@ -35,5 +35,26 @@ export const attic: Artifact[] = [
     what: "The horizontal bars a person steps on while climbing a ladder.",
     why: "Bare rails give no foothold. Evenly spaced rungs turn a vertical climb into a stable, repeatable series of steps instead of a sheer surface to scale.",
     has: ["wood"],
+  },
+  {
+    slug: "attic-fan",
+    name: "Attic Fan",
+    what: "A vent fan mounted at the peak of an attic that pulls hot air out and pushes it through a roof vent.",
+    why: "Heat rises and gets trapped under a roof with nowhere to go, which can push attic temperatures well past the outside air on a sunny day — an exhaust fan actively pulls that trapped heat out instead of waiting for it to passively vent.",
+    has: ["motor", "fan blades"],
+  },
+  {
+    slug: "rafters",
+    name: "Rafters",
+    what: "The sloped structural beams that form an attic's roof frame and support the roofing above.",
+    why: "The roof's weight and the force of wind and snow load need to be carried down to the walls — rafters are the beams spanning that slope, doing the structural work everything else in the attic sits beneath.",
+    has: ["wood"],
+  },
+  {
+    slug: "attic-window",
+    name: "Attic Window",
+    what: "A small window set into an attic's gable end, providing natural light and minimal ventilation.",
+    why: "An attic used for anything more than blind storage needs some daylight to work by, and a gable is the one flat vertical surface available up there for a window — a small opening gives both light and a bit of airflow without needing full ventilation ductwork.",
+    has: ["glass", "wood"],
   },
 ];

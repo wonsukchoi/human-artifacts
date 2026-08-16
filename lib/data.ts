@@ -18,6 +18,63 @@ import { homeGym } from "./artifacts/home-gym";
 import { homeTheater } from "./artifacts/home-theater";
 import { playroom } from "./artifacts/playroom";
 import { musicRoom } from "./artifacts/music-room";
+import { basement } from "./artifacts/basement";
+import { porch } from "./artifacts/porch";
+import { sunroom } from "./artifacts/sunroom";
+import { balcony } from "./artifacts/balcony";
+import { homeBar } from "./artifacts/home-bar";
+import { wineCellar } from "./artifacts/wine-cellar";
+import { sauna } from "./artifacts/sauna";
+import { workshop } from "./artifacts/workshop";
+import { greenhouse } from "./artifacts/greenhouse";
+import { artStudio } from "./artifacts/art-studio";
+import { rootCellar } from "./artifacts/root-cellar";
+import { library } from "./artifacts/library";
+import { sewingRoom } from "./artifacts/sewing-room";
+import { poolHouse } from "./artifacts/pool-house";
+import { darkroom } from "./artifacts/darkroom";
+import { butlersPantry } from "./artifacts/butlers-pantry";
+import { carport } from "./artifacts/carport";
+import { billiardRoom } from "./artifacts/billiard-room";
+import { serverRoom } from "./artifacts/server-room";
+import { stormShelter } from "./artifacts/storm-shelter";
+import { crawlSpace } from "./artifacts/crawl-space";
+import { cigarLounge } from "./artifacts/cigar-lounge";
+import { observatory } from "./artifacts/observatory";
+import { gallery } from "./artifacts/gallery";
+import { meditationRoom } from "./artifacts/meditation-room";
+import { trophyRoom } from "./artifacts/trophy-room";
+import { recordingStudio } from "./artifacts/recording-studio";
+import { bowlingAlley } from "./artifacts/bowling-alley";
+import { smokehouse } from "./artifacts/smokehouse";
+import { arcadeRoom } from "./artifacts/arcade-room";
+import { chickenCoop } from "./artifacts/chicken-coop";
+import { tackRoom } from "./artifacts/tack-room";
+import { homeBrewery } from "./artifacts/home-brewery";
+import { homeDistillery } from "./artifacts/home-distillery";
+import { iceHouse } from "./artifacts/ice-house";
+import { milkingParlor } from "./artifacts/milking-parlor";
+import { silo } from "./artifacts/silo";
+import { cornCrib } from "./artifacts/corn-crib";
+import { wellHouse } from "./artifacts/well-house";
+import { apiary } from "./artifacts/apiary";
+import { kennel } from "./artifacts/kennel";
+import { skatingRink } from "./artifacts/skating-rink";
+import { sculptureGarden } from "./artifacts/sculpture-garden";
+import { orchard } from "./artifacts/orchard";
+import { vineyard } from "./artifacts/vineyard";
+import { stable } from "./artifacts/stable";
+import { ciderHouse } from "./artifacts/cider-house";
+import { cheeseCave } from "./artifacts/cheese-cave";
+import { potteryStudio } from "./artifacts/pottery-studio";
+import { glassblowingStudio } from "./artifacts/glassblowing-studio";
+import { leatherworkingStudio } from "./artifacts/leatherworking-studio";
+import { blacksmithForge } from "./artifacts/blacksmith-forge";
+import { boathouse } from "./artifacts/boathouse";
+import { letterpressStudio } from "./artifacts/letterpress-studio";
+import { bookbindingStudio } from "./artifacts/bookbinding-studio";
+import { gardenShed } from "./artifacts/garden-shed";
+import { deck } from "./artifacts/deck";
 
 export type { Artifact };
 
@@ -45,6 +102,63 @@ export const artifacts: Artifact[] = [
   ...homeTheater,
   ...playroom,
   ...musicRoom,
+  ...basement,
+  ...porch,
+  ...sunroom,
+  ...balcony,
+  ...homeBar,
+  ...wineCellar,
+  ...sauna,
+  ...workshop,
+  ...greenhouse,
+  ...artStudio,
+  ...rootCellar,
+  ...library,
+  ...sewingRoom,
+  ...poolHouse,
+  ...darkroom,
+  ...butlersPantry,
+  ...carport,
+  ...billiardRoom,
+  ...serverRoom,
+  ...stormShelter,
+  ...crawlSpace,
+  ...cigarLounge,
+  ...observatory,
+  ...gallery,
+  ...meditationRoom,
+  ...trophyRoom,
+  ...recordingStudio,
+  ...bowlingAlley,
+  ...smokehouse,
+  ...arcadeRoom,
+  ...chickenCoop,
+  ...tackRoom,
+  ...homeBrewery,
+  ...homeDistillery,
+  ...iceHouse,
+  ...milkingParlor,
+  ...silo,
+  ...cornCrib,
+  ...wellHouse,
+  ...apiary,
+  ...kennel,
+  ...skatingRink,
+  ...sculptureGarden,
+  ...orchard,
+  ...vineyard,
+  ...stable,
+  ...ciderHouse,
+  ...cheeseCave,
+  ...potteryStudio,
+  ...glassblowingStudio,
+  ...leatherworkingStudio,
+  ...blacksmithForge,
+  ...boathouse,
+  ...letterpressStudio,
+  ...bookbindingStudio,
+  ...gardenShed,
+  ...deck,
 ];
 
 export function getArtifact(slug: string): Artifact | undefined {

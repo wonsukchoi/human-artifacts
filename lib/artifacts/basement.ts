@@ -1,0 +1,88 @@
+import type { Artifact } from "./types";
+
+export const basement: Artifact[] = [
+  {
+    slug: "basement",
+    name: "Basement",
+    what: "A room built partly or fully below ground level at the base of a house.",
+    why: "Building down instead of only up adds usable floor space without increasing the house's footprint or roofline — the below-ground position also stays naturally cooler and holds the foundation, utility lines, and mechanical equipment a house needs somewhere out of the way.",
+    has: ["sump pump", "water heater", "support beam", "furnace", "basement shelving", "electrical panel", "pool table"],
+  },
+  {
+    slug: "support-beam",
+    name: "Support Beam",
+    what: "A thick horizontal beam running across a basement's ceiling that carries the weight of the floor above.",
+    why: "The floor and everything on it above pushes down with enormous combined weight — a beam spans that distance and carries the load to the foundation walls instead of letting the floor sag or crack under its own span.",
+    has: ["steel"],
+  },
+  {
+    slug: "sump-pump",
+    name: "Sump Pump",
+    what: "A pump installed at a basement's lowest point that automatically removes groundwater before it floods the floor.",
+    why: "A basement sits near soil that can get saturated after rain, and water naturally seeps toward its lowest point — without something to pump it back out, that seepage would pool and flood the floor every time it rains hard.",
+    has: ["motor", "float switch"],
+  },
+  {
+    slug: "float-switch",
+    name: "Float Switch",
+    what: "A hollow float attached to a hinged arm that rises with water level and trips a switch once it reaches a set height.",
+    why: "The pump needs to know exactly when water has risen enough to need clearing without a person watching it — the float's rise and fall with the water level is a simple, power-free way to trigger the pump automatically.",
+    has: ["polymer", "contacts"],
+  },
+  {
+    slug: "water-heater",
+    name: "Water Heater",
+    what: "An insulated tank appliance that heats and stores water for use at sinks, showers, and appliances throughout the house.",
+    why: "Water straight from the supply line is cold, and heating it fresh at every tap would need a burner at each fixture — a single insulated tank heats a whole household's supply once and holds it ready at temperature until it's drawn.",
+    has: ["water heater tank", "water heater element", "thermostat"],
+  },
+  {
+    slug: "water-heater-tank",
+    name: "Water Heater Tank",
+    what: "The large insulated cylindrical vessel inside a water heater that holds a household's hot water supply.",
+    why: "Hot water needs to be ready in volume the instant a tap opens, not heated on demand one cup at a time — a tank stores a full supply already heated so any fixture in the house can draw hot water immediately.",
+    has: ["steel", "insulation"],
+  },
+  {
+    slug: "water-heater-element",
+    name: "Water Heater Element",
+    what: "A resistive metal coil submerged directly in a water heater's tank that heats the surrounding water.",
+    why: "Water conducts heat away from a coil far faster than air does, so submerging the element directly in the tank instead of heating air around it lets it transfer heat into the whole tank's volume efficiently.",
+    has: ["wire"],
+  },
+  {
+    slug: "furnace",
+    name: "Furnace",
+    what: "A gas- or electric-powered heating unit that warms air and distributes it through ducts to the rest of the house.",
+    why: "Winter air indoors would match outside temperature without something actively adding heat — a central furnace heats air in one place and pushes it through ducts to every room, instead of needing a separate heater in each one.",
+    has: ["furnace burner", "blower fan"],
+  },
+  {
+    slug: "furnace-burner",
+    name: "Furnace Burner",
+    what: "A gas burner inside a furnace that ignites a steady flame to heat air passing over it.",
+    why: "Air needs to pick up a lot of heat quickly as it's pushed through the furnace — a sustained flame directly in the airflow path transfers heat far faster than a passive electric coil could at this volume.",
+    has: ["gas jet", "igniter"],
+  },
+  {
+    slug: "blower-fan",
+    name: "Blower Fan",
+    what: "A motorized fan inside a furnace that pushes heated air through the house's ductwork.",
+    why: "Heat rising naturally from a furnace would only warm the room directly above it — a fan forces that hot air through ducts to reach every room in the house instead of just the one closest to the source.",
+    has: ["motor", "fan blades"],
+  },
+  {
+    slug: "basement-shelving",
+    name: "Basement Shelving",
+    what: "Open metal shelving units along a basement wall for storing bins and seasonal items.",
+    why: "A basement's unfinished walls and floor make built-in cabinetry impractical, but boxes set directly on a concrete floor risk dampness — raised open shelving keeps stored items off the floor and easy to see at a glance.",
+    has: ["steel"],
+  },
+  {
+    slug: "electrical-panel",
+    name: "Electrical Panel",
+    what: "A metal box containing circuit breakers that distributes electricity from the main line to circuits throughout the house.",
+    why: "A single incoming power line has to be split into many separate circuits, each protected from overload — breakers in the panel do that splitting and immediately cut power to any one circuit that draws too much, without taking down the whole house.",
+    has: ["steel"],
+  },
+];

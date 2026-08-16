@@ -6,7 +6,7 @@ export const laundryRoom: Artifact[] = [
     name: "Laundry Room",
     what: "A room equipped with machines for washing and drying clothes.",
     why: "Fabric holds onto sweat, oil, and stains that plain water alone won't lift. Dedicated machines agitate, heat, and spin clothes far more thoroughly than hand-washing, and doing it in one place keeps the mess and noise contained.",
-    has: ["washing machine", "dryer", "laundry basket", "iron", "ironing board"],
+    has: ["washing machine", "dryer", "laundry basket", "iron", "ironing board", "drying rack", "lint roller"],
   },
   {
     slug: "laundry-basket",
@@ -41,7 +41,14 @@ export const laundryRoom: Artifact[] = [
     name: "Dryer",
     what: "A machine that tumbles damp clothes through heated air until the water in them evaporates.",
     why: "Air-drying is slow and space-consuming. Forcing hot air through a tumbling drum evaporates the remaining water in a fraction of the time.",
-    has: ["drum", "heating element"],
+    has: ["drum", "heating element", "lint trap"],
+  },
+  {
+    slug: "lint-trap",
+    name: "Lint Trap",
+    what: "A removable fine-mesh screen in a dryer's airflow path that catches lint shed from tumbling fabric.",
+    why: "Every load sheds fibers into the airflow, and lint packed into the exhaust vent blocks airflow and ignites easily against the heating element — the trap catches it somewhere shallow and removable instead, so it can be cleared before each load rather than building up downstream.",
+    has: ["wire", "polymer"],
   },
   {
     slug: "iron",
@@ -91,5 +98,19 @@ export const laundryRoom: Artifact[] = [
     what: "X-shaped metal legs under an ironing board that fold flat against the board for storage.",
     why: "The board is only set up while ironing and needs to store flat against a wall the rest of the time — legs that fold in let the whole thing collapse to a thin profile instead of taking up floor space permanently.",
     has: ["steel"],
+  },
+  {
+    slug: "drying-rack",
+    name: "Drying Rack",
+    what: "A folding rack of parallel bars that clothes are draped over to air-dry.",
+    why: "Some fabrics shrink, warp, or lose shape in a tumble dryer's heat — laying them flat or draped over a rack lets them dry gently at room temperature instead.",
+    has: ["wire"],
+  },
+  {
+    slug: "lint-roller",
+    name: "Lint Roller",
+    what: "A handheld roller covered in adhesive sheets, rolled over fabric to pick up lint and pet hair.",
+    why: "Lint and shed hair cling to clothing through static and can't just be brushed off — a sticky roller picks them up directly on contact, something a hand or brush can't do without leaving residue behind.",
+    has: ["polymer"],
   },
 ];

@@ -6,7 +6,7 @@ export const diningRoom: Artifact[] = [
     name: "Dining Room",
     what: "A room set aside for eating meals together at a table.",
     why: "Eating needs a stable surface for food and dishes, and sharing that surface with others is what turns a meal into a shared occasion instead of a solitary one.",
-    has: ["dining table", "dining chair", "lamp", "tablecloth", "placemat"],
+    has: ["dining table", "dining chair", "lamp", "tablecloth", "placemat", "centerpiece", "salt and pepper shakers"],
   },
   {
     slug: "dining-table",
@@ -35,5 +35,19 @@ export const diningRoom: Artifact[] = [
     what: "An individual mat set at each place setting to protect the table under plates and cutlery.",
     why: "Even with a tablecloth, direct plate-and-cutlery contact scuffs and stains a surface at each seat repeatedly — a placemat takes that concentrated wear right where each person eats.",
     has: ["fabric"],
+  },
+  {
+    slug: "centerpiece",
+    name: "Centerpiece",
+    what: "A decorative arrangement, often flowers or candles, placed in the middle of a dining table.",
+    why: "A long table's center sits empty and visually dead during a meal — a centerpiece fills that gap and gives the table a focal point without occupying space actually needed for plates and dishes.",
+    has: ["ceramic"],
+  },
+  {
+    slug: "salt-and-pepper-shakers",
+    name: "Salt and Pepper Shakers",
+    what: "A matched pair of small perforated containers that sprinkle salt and pepper onto food at the table.",
+    why: "Passing a whole container of loose salt around a table would spill constantly — a shaker's perforated top releases just a light dusting per shake, letting each person season their own plate without a mess.",
+    has: ["glass", "jar lid"],
   },
 ];
